@@ -1,22 +1,30 @@
 # dotpyvenv
-A simple oh-my-zsh plugin.
+A simple oh-my-zsh plugin, forked from jeanpantoja's.
 
 ## Description
 This plugin automagically switch to a python virtual enviroment located (that you
 previously have created with virtualenv program) in a folder named
-".pyvenv". If you have the virtualenv folder in a diferente folder you
+".venv". If you have the virtualenv folder in a diferente folder you
 can create a .pyvenvdir file and put the custom dir inside this
 file, the plugin will search for your custom folder fisrt.
 
+### Differences with the original
+The only difference is the default directory for the virtualenv. In jeanpantoja's
+plugin it's ".pyvenv", in my fork is ".venv" to enable better integration with
+[pipenv](https://pypi.org/project/pipenv/) (note that to do so you must set
+`PIPENV_VENV_IN_PROJECT`).
+I'm not using a pipenv specialized tool because they spawn a `pipenv shell`,
+taking time to cd into a pipenv directory and doubling the time to spawn a new
+one is such a location. This plugin is much more lightweight.
+
+Of course you may wonder why I use a plugin like this if I'm also using pipenv,
+but I don't think that's really the point. Anyway, it's just a matter of habits,
+in time I may get rid of this.
+
 ## Installation
 
-You can clone the repository and execute the install.sh script.
-
-Or you can execute the command \
-`bash <(curl -s -S -L https://raw.githubusercontent.com/jeanpantoja/dotpyvenv/master/online_installer.sh)` \
-to run the online installer.
-
-After the installation step you must add `dotpyvenv` in plugins at file `${HOME}/.zshrc`
+I install plugins via [antibody](https://github.com/getantibody/antibody), for other
+installation methods please refer to the original README or your favourite plugin manager.
 
 ## TODO
 
